@@ -41,6 +41,7 @@ header {
 
 .controls{
     display: flex;
+    flex-direction: column;
 }
 
 
@@ -120,22 +121,9 @@ div.colors:nth-child(2) {
     margin-right: 15px;
 }
 
-div.container {
-    margin-left: 10px;
-}
-.row {
-    height: calc(100%/3); 
-}
-.row > div {
-    width: calc(100%/3); 
-}
-.row > div > div.col-sm { 
-    position: absolute;
-    height: 232.66px;
-    width: 235.22px;
-    margin: 2px;
-    background-color: gray;
-    border: 1px solid gray;
+.custom-select {
+    margin-left: 30px;
+    width: 80%;
 }
 
 .canvas-wrapper {
@@ -147,4 +135,5 @@ canvas {
     height: 512px;
     image-rendering: pixelated;
     border: 1px solid darkslategray;
+    background: grey;
 }

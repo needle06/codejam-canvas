@@ -31,12 +31,15 @@
           </div>
       </div>  
       <select class="custom-select mr-sm-2" title="Choose size">
-        <option>4x4</option>
-        <option>32x32</option>
+        <option disabled selected value="Choose size">Choose size</option>
+        <option value="4x4">4x4</option>
+        <option value="32x32">32x32</option>
+        <option value="256x256">256x256</option>
       </select>
     </section>
     <section class="canvas-wrapper">
-        <canvas id="canvas" width="4" height="4"></canvas>
+        <canvas id="canvas"></canvas>
+        <img id = "img" src="assets/image.png" alt="">
     </section>
   </main>
   
