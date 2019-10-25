@@ -1,60 +1,54 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+let data4 = require('../assets/4x4.json');
+let data32 = require('../assets/32x32.json');
+
+function processHexColors(data) {
+  return data.map(arr => arr.map(color => "#"+color))
+}
+
+function processRGBAColors(data) {
+  return data.map(arr => arr.map(color => `rgba(${color})`))
+}
+
+
 var canvas = document.getElementById('canvas');
 let ctx = canvas.getContext('2d');
 
 let select = document.querySelector('select');
 var img = document.getElementById("img");
-console.log(select.length)
+
 
 function drawLogo() {
-  // ctx.clearRect(0,0,256,256)
   canvas.setAttribute('width',256);
   canvas.setAttribute('height',256);
   ctx.drawImage(img,0,0);
 }
 
 function switchImage(event) {
-  for(let i = 1; i < select.length; i++) {
     if(event.target.value === "256x256") {
       drawLogo();
     }
     if(event.target.value === "4x4") {
-      drawPixels();
+      drawPixels(processHexColors(data4));
     }
-  }
-
+    if(event.target.value === "32x32") {
+      drawPixels(processRGBAColors(data32));
+    }
 }
-select.addEventListener('change', switchImage)
 
-let data = [
-  ["#00BCD4", "#FFEB3B","#FFEB3B","#00BCD4"],
-  ["#FFEB3B", "#FFC107","#FFC107","#FFEB3B"],
-  ["#FFEB3B", "#FFC107","#FFC107","#FFEB3B"],
-  ["#00BCD4", "#FFEB3B","#FFEB3B","#00BCD4"]
-]
-
-// for (let i =0; i<data.length; i++) {
-//   data[i].map(color => "#"+color)
-// }
-// let pixelsColor = data.forEach(arr => {
-//   return arr.map(color => "#"+color)
-//  })
-
-console.log(data[0].map(el=>"#"+el))
-console.log(data)
-
-// let myImageData = ctx.createImageData(width, height);
-
-function drawPixels(){
-  // ctx.clearRect(0,0,4,4)
-  canvas.setAttribute('width',4);
-  canvas.setAttribute('height',4);
+function drawPixels(data){
+  canvas.setAttribute('width',data[0].length);
+  canvas.setAttribute('height',data.length);
   for(let row = 0; row < data.length; row++) {
     for(let col = 0; col < data[0].length; col++) {
         ctx.fillStyle = data[row][col]; 
-        ctx.fillRect(col, row, 4, 4);
+        ctx.fillRect(col, row, 1, 1);
     }
+  }
 }
-}
+
+select.addEventListener('change', switchImage)
+
+
