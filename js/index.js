@@ -9,7 +9,7 @@ var img = document.getElementById("img");
 console.log(select.length)
 
 function drawLogo() {
-  ctx.clearRect(0,0,256,256)
+  // ctx.clearRect(0,0,256,256)
   canvas.setAttribute('width',256);
   canvas.setAttribute('height',256);
   ctx.drawImage(img,0,0);
@@ -48,13 +48,13 @@ console.log(data)
 // let myImageData = ctx.createImageData(width, height);
 
 function drawPixels(){
-  ctx.clearRect(0,0,4,4)
+  // ctx.clearRect(0,0,4,4)
   canvas.setAttribute('width',4);
   canvas.setAttribute('height',4);
   for(let row = 0; row < data.length; row++) {
     for(let col = 0; col < data[0].length; col++) {
-        ctx.fillStyle = data[row][col]; // Set the color to the one specified
-        ctx.fillRect(col, row, 4, 4); // Actually draw the rectangle
+        ctx.fillStyle = data[row][col]; 
+        ctx.fillRect(col, row, 4, 4);
     }
 }
 }
