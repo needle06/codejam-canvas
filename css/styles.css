@@ -1,0 +1,150 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1440px;
+    margin: 0 auto;
+
+}
+
+header {
+    height: 48px;
+    margin-bottom: 79px;
+
+}
+
+#h1 {
+    margin-left: 35px;
+    display: inline-block;
+    font-family: Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 23px;
+    width: 276px;
+}
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    background-image: url("../assets/icons/nav-icon.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+}
+.main {
+    display: flex;
+}
+
+.controls{
+    display: flex;
+}
+
+
+.tools, .colors {
+    height: 246px;
+    width: 228px;
+    justify-content: space-around;
+    margin-left: 30px;
+}
+
+div.tools:nth-child(2) {
+    border-bottom:1px solid #C4C4C4;
+}
+
+div.colors:nth-child(2) {
+    border-bottom:1px solid #C4C4C4;
+}
+
+.bucket, .picker, .move, .transform {
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: none;
+    color: gray;
+    background-repeat: no-repeat;
+}
+.bucket {
+    background-image: url('../assets/icons/bucket.png')
+}
+
+.picker {
+    background-image: url('../assets/icons/picker.png')
+}
+
+.transform {
+    background-image: url('../assets/icons/transform.png')
+}
+
+.move {
+    background-image: url('../assets/icons/move.png')
+}
+.cur-color {
+    width: 20px;
+    height: 20px;
+    background: #41F795;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    margin-right: 15px;
+
+}
+
+.prev-color {
+    width: 20px;
+    height: 20px;
+    background: #C4C4C4;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.red-color {
+    width: 20px;
+    height: 20px;
+    background: #F74141;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.blue-color{
+    width: 20px;
+    height: 20px;
+    background: #41B6F7;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+div.container {
+    margin-left: 10px;
+}
+.row {
+    height: calc(100%/3); 
+}
+.row > div {
+    width: calc(100%/3); 
+}
+.row > div > div.col-sm { 
+    position: absolute;
+    height: 232.66px;
+    width: 235.22px;
+    margin: 2px;
+    background-color: gray;
+    border: 1px solid gray;
+}
+
+.canvas-wrapper {
+    margin-left: 300px;
+}
+
+canvas {
+    width: 512px;
+    height: 512px;
+    image-rendering: pixelated;
+    border: 1px solid darkslategray;
+}
