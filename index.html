@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CodeJam Canvas</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="shadow-sm p-2 bg-white rounded">
+      <button type="button" class="nav-icon"></button>
+      <h1 id="h1">CodeJam - Canvas</h1> 
+    </header>
+  <main class="main">
+    <section class="controls">
+      <div class="wrapper-tools">
+        <div class="tools border d-flex flex-column bd-highlight mb-3">
+            <div class="p-2 bd-highlight"><button class="bucket"></button><span>Paint bucket (key ←)</span></div>
+            <div class="p-2 bd-highlight border-bottom"><button class="picker"></i></button><span>Choose color (key ↑)</span></div>
+            <div class="p-2 bd-highlight"><button class="move"></i></button><span>Move (key →)</span></div>
+            <div class="p-2 bd-highlight"><button class="transform"></i></button><span>Transform (key ↓)</span></div>
+          </div>
+
+          <div class="colors border d-flex flex-column bd-highlight mb-3">
+              <div class="p-2 bd-highlight"><button class="cur-color"></button><span>Current color</span></div>
+              <div class="p-2 bd-highlight border-bottom"><button class="prev-color"></button><span>Prev color</span></div>
+              <div class="p-2 bd-highlight"><button class="red-color"></button><span>red</span></div>
+              <div class="p-2 bd-highlight"><button class="blue-color"></button><span>blue</span></div>
+          </div>
+      </div>  
+      <select class="custom-select mr-sm-2" title="Choose size">
+        <option disabled selected value="Choose size">Choose size</option>
+        <option value="4x4">4x4</option>
+        <option value="32x32">32x32</option>
+        <option value="256x256">256x256</option>
+      </select>
+    </section>
+    <section class="canvas-wrapper">
+        <canvas id="canvas"></canvas>
+    </section>
+  </main>
+  
+
+  <script src="dist/bundle.js"></script>
+</body>
+</html>
