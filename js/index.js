@@ -27,7 +27,6 @@ function drawLogo() {
   img.src = "dist/" + require('../assets/image.png');
   canvas.setAttribute('width',256);
   canvas.setAttribute('height',256);
-  
 }
 
 function switchImage(event) {
