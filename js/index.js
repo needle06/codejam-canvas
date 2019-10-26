@@ -17,13 +17,17 @@ var canvas = document.getElementById('canvas');
 let ctx = canvas.getContext('2d');
 
 let select = document.querySelector('select');
-var img = document.getElementById("img");
 
 
 function drawLogo() {
+  let img = new Image();
+  img.addEventListener("load", function() {
+    ctx.drawImage(img,0,0);
+  });
+  img.src = '../assets/image.png';
   canvas.setAttribute('width',256);
   canvas.setAttribute('height',256);
-  ctx.drawImage(img,0,0);
+  
 }
 
 function switchImage(event) {
