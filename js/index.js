@@ -24,7 +24,7 @@ function drawLogo() {
   img.addEventListener("load", function() {
     ctx.drawImage(img,0,0);
   });
-  img.src = '../assets/image.png';
+  img.src = "dist/" + require('../assets/image.png');
   canvas.setAttribute('width',256);
   canvas.setAttribute('height',256);
   
